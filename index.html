@@ -1,7 +1,7 @@
 ﻿<style>h1, canvas { font-family: twemoji }</style>
 <style id=css></style>
 
-<h2>Add opt-in emoji support on non-Apple/Google devices</h2>
+<h2>Add Twitter emoji support on non-Apple/Google devices</h2>
 
 Emoji as text
 <br>
@@ -12,23 +12,26 @@ Emoji in canvas
 <canvas id=a></canvas>
 
 <script>
-if(!navigator.userAgent.match(/iPhone|Mac|Android/)){
 
-  if(
-    confirm("Windows 10 and below have bad emoji support. Load twemoji webfont?")
-  ){
+// Edit this
+mycode = function(){
+  c = a.getContext("2d");
+  c.font = "80px twemoji";
+  c.fillText("🇫🇷", 10, 80);
+}
+
+// Font loader
+if(!navigator.userAgent.match(/iPhone|Mac|Android/)){
   
-      css.innerHTML = `@font-face{
-        font-family: "twemoji";
-        src: url("https://xem.github.io/twemoji-webfont/twemoji.ttf")
-      }`;
+  if(confirm("Windows 10 and below have bad emoji support. Load twemoji webfont?")){
       
-      css.onload = function(){
-        c = a.getContext("2d");
-        c.font = "80px twemoji";
-        c.fillText("🇦🇽", 10, 80);
-      };
+      css.innerHTML = `@font-face { font-family: "twemoji"; src: url("https://xem.github.io/twemoji-webfont/twemoji.ttf")}`;
       
+      document.fonts.onloadingdone = mycode;
+      
+  }
+  else {
+    mycode();
   }
 }
 </script>
