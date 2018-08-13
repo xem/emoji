@@ -1,0 +1,35 @@
+﻿<style>h1, canvas { font-family: twemoji }</style>
+<style id=css></style>
+
+<h2>Add opt-in emoji support on non-Apple/Google devices</h2>
+
+Emoji as text
+<br>
+<h1>👪 🤦‍♂️ 👨🏿 🇺🇸</h1>
+
+Emoji in canvas
+<br>
+<canvas id=a></canvas>
+
+<script>
+if(!navigator.userAgent.match(/iPhone|Mac|Android/)){
+
+  if(
+    confirm("Windows 10 and below have bad emoji support. Load twemoji webfont?")
+  ){
+  
+      css.innerHTML = `@font-face{
+        font-family: "twemoji";
+        src: url("https://xem.github.io/twemoji-webfont/twemoji.ttf")
+      }`;
+      
+      css.onload = function(){
+        c = a.getContext("2d");
+        c.font = "80px twemoji";
+        c.fillText("🇦🇽", 10, 80);
+      };
+      
+  }
+}
+</script>
+
