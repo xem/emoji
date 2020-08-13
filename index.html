@@ -1,13 +1,17 @@
 ﻿<style>h1, canvas { font-family: twemoji }</style>
 <style id=css></style>
 
-<h2>Add Twitter emoji support on non-Apple/Google devices</h2>
+<h2>Load twitter emoji's webfont</h2> 
+<p>This trick can be used in a js13kgames entry</p>
 
-Emoji as text
+<br>
+<br>
+
+Display emoji as text
 <br>
 <h1>👪 🤦‍♂️ 👨🏿 🇺🇸</h1>
 
-Emoji in canvas
+Display emoji in canvas
 <br>
 <canvas id=a></canvas>
 
@@ -21,18 +25,13 @@ mycode = function(){
 }
 
 // Font loader
-if(!navigator.userAgent.match(/iPhone|Mac|Android/)){
-  
-  if(confirm("Windows 10 and below have bad emoji support. Load twemoji webfont?")){
-      
-      css.innerHTML = `@font-face { font-family: "twemoji"; src: url("https://xem.github.io/twemoji-webfont/twemoji.ttf")}`;
-      
-      document.fonts.onloadingdone = mycode;
-      
-  }
-  else {
-    mycode();
-  }
+if(confirm("Load twemoji webfont?")){
+
+  css.innerHTML = `@font-face { font-family: "twemoji"; src: url("https://xem.github.io/twemoji-webfont/twemoji.ttf")}`;
+  document.fonts.onloadingdone = mycode;  
+}
+else {
+  mycode();
 }
 </script>
 
