@@ -1,19 +1,19 @@
 ﻿<style>
 @font-face {
   font-family: emoji;
-  src: url(noto.ttf);
+  src: url(noto.ttf), url(twemoji.ttf);
 }
 body { padding: 50px 150px }
 h1, canvas, details.emoji { font-family: emoji }
 pre { background: #def; padding: 10px }
 p, pre, details, summary, b { font-size: 20px }
 </style>
-<h2>Color emoji webfont</h2>
-<p>If you need to use consistent emoji in your JS13k entry or web app, and worry that Emoji support is very poor across OS's and browsers, you can polyfill them by loading the Noto color emoji webfont (<a href="https://github.com/googlefonts/noto-emoji/releases/tag/v2020-07-22-unicode13_0">source</a>):
+<h2>Color emoji webfont everywhere!</h2>
+<p>If you need to use color emoji in your JS13k entry or web app, and worry that Emoji support is very poor across OS's and browsers, you can polyfill them by loading the Noto color emoji webfont for Webkit and Edge (<a href="https://github.com/googlefonts/noto-emoji/releases/tag/v2020-07-22-unicode13_0">source</a>) and the Twemoji webfont (<a href="https://github.com/eosrei/twemoji-color-font/releases/tag/v12.0.1">source</a>) for Firefox:
 
 <pre>&lt;style>@font-face {
   font-family: emoji;
-  src: url(//xem.github.io/emoji/noto.ttf);
+  src: url(//xem.github.io/emoji/noto.ttf), url(//xem.github.io/emoji/twemoji.ttf);
 }&lt;/style>
 
 // Use with CSS
@@ -40,7 +40,7 @@ onload = () => {
 
 <br><br>
 
-<p>Here's a list of all the emoji included in this webfont:
+<p>Here's a list of emoji from Unicode 12:
 <br>
 <details class=emoji>
 <summary>Unfold</summary>
