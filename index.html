@@ -1,20 +1,21 @@
 ﻿<style>
 @font-face {
   font-family: emoji;
-  src: url(noto.ttf), url(twemoji.ttf);
+  src: url(twemoji.ttf);
 }
 body { padding: 50px 150px }
-h1, canvas, details.emoji { font-family: emoji }
+.emoji { font-family: emoji }
 pre { background: #def; padding: 10px }
-p, pre, details, summary, b { font-size: 20px }
+p, pre, details, summary, b { font-size: 30px }
+body, summary { font-family: arial }
 </style>
-<h2>Color emoji webfont everywhere!</h2>
-<p>If you need to use color emoji in your JS13k entry or web app, and worry that Emoji support is very poor across OS's and browsers, you can polyfill them by loading the Noto color emoji webfont for Webkit and Edge (<a href="https://github.com/googlefonts/noto-emoji/releases/tag/v2020-07-22-unicode13_0">source</a>) and the Twemoji webfont (<a href="https://github.com/eosrei/twemoji-color-font/releases/tag/v12.0.1">source</a>) for Firefox:
+<h2>Emoji everywhere!</h2>
+<p>If you need to use consistent color emoji in your JS13k entry or web app, you can polyfill them by loading the Twemoji-colr font made by Twitter and built by Mozilla in order to work everywhere (1.28Mb, <a href="https://github.com/mozilla/twemoji-colr/releases/tag/v0.5.1">source</a>):
 
 <pre>&lt;style>
 @font-face {
   font-family: emoji;
-  src: url(//xem.github.io/emoji/noto.ttf), url(//xem.github.io/emoji/twemoji.ttf);
+  src: url(//xem.github.io/emoji/twemoji.ttf);
 }
 &lt;/style>
 
@@ -31,7 +32,7 @@ onload = () => {
 <b>Demo:</b>
 
 <p>Here are some emoji that use the Noto Emoji webfont as soon as it's loaded, and the default system's emoji while loading:
-<h1>👪 🤦‍♂️ 👨🏿 🇺🇸</h1>
+<p class=emoji>👪 🤦‍♂️ 👨🏿 🇺🇸</p>
 
 <br>
 <br>
@@ -44,7 +45,7 @@ onload = () => {
 
 <p>Here's a list of emoji from Unicode 12:
 <br>
-<details class=emoji>
+<details class=emoji open>
 <summary>Unfold</summary>
 
 😀😃😄😁😆😅😂🤣☺️😊😇🙂🙃😉😌😍🥰😘😗😙😚😋😛😝😜🤪🤨🧐🤓😎🤩🥳😏😒😞😔😟😕🙁☹️😣😖😫😩🥺😢😭😤😠😡🤬🤯😳🥵🥶😱😨😰😥😓🤗🤔🤭🤫🤥😶😐😑😬🙄😯😦😧😮😲🥱😴🤤😪😵🤐🥴🤢🤮🤧😷🤒🤕🤑🤠😈👿👹👺🤡💩👻💀☠️👽👾🤖🎃😺😸😹😻😼😽🙀😿😾
